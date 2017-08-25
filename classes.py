@@ -2,7 +2,7 @@ import numpy as np
 from config import *
 
 class Teilchen(object):
-	
+
 	def __init__(self, phi, radius, vel):
 		self.x = np.cos(phi) * radius
 		self.y = np.sin(phi) * radius
