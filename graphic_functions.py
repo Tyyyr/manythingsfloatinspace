@@ -4,7 +4,7 @@ from config import *
 def draw(a, screen):
     """Draws an object on the screen
     """
-    circle(screen, a.colour, (norm_pos(a.x) + width/2,
+    circle(screen, (100,100,100), (norm_pos(a.x) + width/2,
     norm_pos(a.y) + height/2), norm_rad(a.radius), 0)
 
 def draw2(a, screen):

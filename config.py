@@ -1,5 +1,8 @@
 from numpy import dtype, float64
 
+acc_vars = ["x", "y", "velocity", "force", "mass", "radius",
+            "volume", "momentum", "active"]
+
 c_float = dtype(float64)
 
 background_colour = (10, 10, 10)
@@ -11,5 +14,3 @@ AE = 1.496e11
 
 dt = 3600
 n = 100
-
-#todo: cython get_force, get_abstand, get_force_matrix

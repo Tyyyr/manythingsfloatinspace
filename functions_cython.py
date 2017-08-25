@@ -19,7 +19,7 @@ def init_particle_list(n):
 		temp.append(Particle(phi, radius, vel))
 	return temp
 
-def total_force_per_part(force_mat,i):
+def total_force_per_part(force_mat, i):
 	"""
 	Gibt die Gesamtkraft, die auf ein Teilchen wirkt, zurück.
 	"""

@@ -3,9 +3,9 @@ cimport numpy as np
 from config import *
 
 cdef class Particle:
-    cdef public double x, y, mass, radius, volume, torque
-    cdef public double[2] velocity, force, momentum
-    cdef public int active
+    #cdef public double x, y, mass, radius, volume, torque
+    #cdef public double[2] velocity, force, momentum
+    #cdef public int active
 
     def __init__(self, phi, radius, vel):
         self.x = np.cos(phi) * radius
