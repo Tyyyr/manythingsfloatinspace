@@ -1,7 +1,7 @@
 from config import *
 from functions_cython import *
 from graphic_functions import *
-from classes import Teilchen, Sun
+from pyx_classes import Sun
 import pygame
 
 liste_teilchen = init_particle_list(n)
@@ -27,5 +27,5 @@ while running:
 	#values
 	force_matrix = get_force_matrix(liste_teilchen)
 	for a, particle in enumerate(liste_teilchen):
-		particle.force = total_force_per_part(force_matrix,a) #get_force()
+		particle.force = total_force_per_part(force_matrix, particle, a)
 		particle.move()
