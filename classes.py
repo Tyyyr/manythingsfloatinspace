@@ -9,7 +9,7 @@ class Teilchen(object):
 		self.velocity = vel * np.array([-np.sin(phi), np.cos(phi)])
 		self.force = np.array([0.,0.])
 
-		self.mass = np.random.randint(1,100) * 1e15
+		self.mass = np.random.randint(1,100) * 1e12
 		self.radius = np.random.uniform(3.,5.) * 1e4
 		self.volume = 4/3 * np.pi * self.radius**3
 		self.momentum = self.velocity * self.mass

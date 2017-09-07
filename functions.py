@@ -1,6 +1,6 @@
 # -*- coding: utf8 -*-
 import numpy as np
-from classes import Teilchen
+from classes import Teilchen, Sun
 from config import *
 
 def init_particle_list(n,width,height):
@@ -35,7 +35,15 @@ def get_force(part_1,part_2):
 		return np.array(f_ges)
 
 	elif l <= min_radius:
-		part_1.actualize(part_2)
+		if not isinstance(part_1,Sun) and not isinstance(part_2,Sun):
+			part_1.actualize(part_2)
+		else:
+			if isinstance(part_1,Sun):
+				part_2.active = False
+				part_2.velocity = np.array([0.,0.])
+			elif not isinstance(part_1,Sun):
+				part_1.active = False
+				part_1.velocity = np.array([0.,0.])
 		return part_1.momentum/dt
 
 def get_force_matrix(liste_part):
@@ -60,9 +68,6 @@ def total_force_per_part(force_mat,i):
 	"""
 	Gibt die Gesamtkraft, die auf ein Teilchen wirkt, zurück.
 	"""
-	#temp = np.array([0.,0.])
-	#for j in force_mat[i]:
-		#temp += j
 	return np.sum(force_mat[i],axis = 0)
 
 def get_abstand(part_1,part_2):

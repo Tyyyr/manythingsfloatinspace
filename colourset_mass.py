@@ -1,21 +1,21 @@
-def color_list(liste_temp):
+def colour_list(liste_temp):
 	"""Calculates 'dynamic' or constant limits of mass for a system
 	with multiple particles.
 	"""
-	#Dynamic relies on lightest and haviest particle of all particles
+	#Dynamic relies on lightest and haviest particle of all particles.
 	#Enable with hmass = max(l)
 	#Constant sums all masses of particles and sets it as upper limit,
-	#the lower limit is equal to the lightest particle at the start
+	#the lower limit is equal to the lightest particle at the start.
 	#Enable with hmass = sum(l)
 	l = []
 	liste_active = [i for i in liste_temp if i.active == True]
 	for i in liste_active:
 		l.append(i.mass)
-	hmass = sum(l)
+	hmass = max(l)
 	mmass = min(l)
 	return hmass, mmass
 
-def fcolorset(i,hmass,mmass):
+def fcolourset(i,hmass,mmass):
 	"""Evaluates the colour values for each particle
 	based on it's mass in relation to the limits.
 	"""
@@ -23,7 +23,8 @@ def fcolorset(i,hmass,mmass):
 	#Green = medium weight object
 	#Red = haviest object
 	#Default colour scale goes from blue to green, then red.
-	#For Reference see file dcc_rgb.png, dcc_r.png, dcc_g.png, dcc_b.png
+	#For Reference of default colour curves see files dcc_rgb.png, 
+	#dcc_r.png, dcc_g.png, dcc_b.png.
 	wert = float(i.mass)/hmass *8
 	#green
 	if wert <= 2:
