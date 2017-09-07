@@ -16,4 +16,4 @@ def norm_pos(x):
 	return int(x * 0.5e-9)
 
 def norm_rad(x):
-	return int(x * 1e-9)
+	return int(x * 0.5e-9)
