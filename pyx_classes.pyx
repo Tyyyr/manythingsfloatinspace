@@ -32,7 +32,7 @@ cdef class Particle:
         * other.velocity[1])/(self.mass + other.mass)
         self.mass += other.mass
         self.volume += other.volume
-        self.radius = np.cbrt((3*self.volume)/(4*np.pi))
+        self.radius = np.cbrt((3 * self.volume)/(4 * np.pi))
         self.velocity[0] = self.momentum[0]/self.mass
         self.velocity[1] = self.momentum[1]/self.mass
         other.active = 0
